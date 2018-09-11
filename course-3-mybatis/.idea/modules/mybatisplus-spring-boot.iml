@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="mybatisplus-spring-boot" external.linked.project.path="$MODULE_DIR$/../../mybatisplus-spring-boot" external.root.project.path="$MODULE_DIR$/../../mybatisplus-spring-boot" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../mybatisplus-spring-boot">
+      <sourceFolder url="file://$MODULE_DIR$/../../mybatisplus-spring-boot/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../mybatisplus-spring-boot/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../mybatisplus-spring-boot/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../mybatisplus-spring-boot/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../mybatisplus-spring-boot/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
