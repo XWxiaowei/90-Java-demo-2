@@ -1,5 +1,6 @@
 package com.jay.springbootdeeplearn.custom.enable;
 
+import com.jay.springbootdeeplearn.custom.condition.ConditionalOnSystemProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class SayHelloWorldConfiguration {
 
     @Bean
+    @ConditionalOnSystemProperty(value = "Mac OS X")
     SayHelloWorld sayHelloWorld() {
         System.out.println("here to loading bean say helloworld!");
         return new SayHelloWorld();

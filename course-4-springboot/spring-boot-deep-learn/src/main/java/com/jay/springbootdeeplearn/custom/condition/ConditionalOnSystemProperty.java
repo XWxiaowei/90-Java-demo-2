@@ -1,6 +1,6 @@
-package com.jay.springbootdeeplearn.custom.selector;
+package com.jay.springbootdeeplearn.custom.condition;
 
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Conditional;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,11 +13,11 @@ import java.lang.annotation.Target;
  *
  * @author xiang.wei
  */
-@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE, ElementType.METHOD})
 @Documented
-@Import({HelloWorldImportSelector.class})
-public @interface EnableSelectorHelloWorld {
+@Conditional({OnSystemPropertyCondition.class})
+public @interface ConditionalOnSystemProperty {
 
-    String model() default "first";
+    String value();
 }
