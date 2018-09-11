@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.mapper.ShopOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="hello.entity.ShopOrder">
+        <id column="c_orderid" property="cOrderid"/>
+        <result column="c_companyid" property="cCompanyid"/>
+        <result column="c_address" property="cAddress"/>
+        <result column="c_activityname" property="cActivityname"/>
+        <result column="f_goodsmoney" property="fGoodsmoney"/>
+        <result column="f_activemoney" property="fActivemoney"/>
+        <result column="f_excost" property="fExcost"/>
+        <result column="f_totalpaymoney" property="fTotalpaymoney"/>
+        <result column="f_alreadypaymoney" property="fAlreadypaymoney"/>
+        <result column="c_paytype" property="cPaytype"/>
+        <result column="c_sendtype" property="cSendtype"/>
+        <result column="c_buyerid" property="cBuyerid"/>
+        <result column="dt_adddate" property="dtAdddate"/>
+        <result column="c_payinfo" property="cPayinfo"/>
+        <result column="c_status" property="cStatus"/>
+        <result column="c_buyernote" property="cBuyernote"/>
+        <result column="c_sellernote" property="cSellernote"/>
+        <result column="c_invoiceid" property="cInvoiceid"/>
+        <result column="c_dealno" property="cDealno"/>
+        <result column="c_exid" property="cExid"/>
+        <result column="c_exno" property="cExno"/>
+        <result column="c_consignee" property="cConsignee"/>
+        <result column="c_mobile" property="cMobile"/>
+        <result column="c_phone" property="cPhone"/>
+        <result column="c_syncstate" property="cSyncstate"/>
+        <result column="c_chargecity" property="cChargecity"/>
+        <result column="dt_paydate" property="dtPaydate"/>
+        <result column="f_cheapmoney" property="fCheapmoney"/>
+        <result column="c_takeperiod" property="cTakeperiod"/>
+        <result column="c_buyerareaid" property="cBuyerareaid"/>
+        <result column="c_detailaddr" property="cDetailaddr"/>
+        <result column="c_tradeno" property="cTradeno"/>
+        <result column="c_tradestate" property="cTradestate"/>
+        <result column="c_trademessage" property="cTrademessage"/>
+        <result column="c_payno" property="cPayno"/>
+        <result column="c_isEvaluate" property="cIsevaluate"/>
+        <result column="c_settlestatus" property="cSettlestatus"/>
+        <result column="dt_enddate" property="dtEnddate"/>
+        <result column="c_isdelay" property="cIsdelay"/>
+        <result column="f_refundMoney" property="fRefundmoney"/>
+        <result column="c_servicer" property="cServicer"/>
+        <result column="f_paytotalscore" property="fPaytotalscore"/>
+        <result column="f_scoremoney" property="fScoremoney"/>
+        <result column="f_vipdiscountprice" property="fVipdiscountprice"/>
+        <result column="c_isgift" property="cIsgift"/>
+        <result column="dt_settledate" property="dtSettledate"/>
+        <result column="c_sendGoodsCity" property="cSendgoodscity"/>
+        <result column="i_cashNum" property="iCashnum"/>
+        <result column="c_cashNum" property="cCashnum"/>
+        <result column="c_platformtype" property="cPlatformtype"/>
+        <result column="c_merchantid" property="cMerchantid"/>
+        <result column="f_totalcoupon" property="fTotalcoupon"/>
+        <result column="c_usecouponinfoid" property="cUsecouponinfoid"/>
+        <result column="c_taxnum" property="cTaxnum"/>
+        <result column="c_buyerCompanyname" property="cBuyercompanyname"/>
+        <result column="c_buyWords" property="cBuywords"/>
+        <result column="c_deliveryType" property="cDeliverytype"/>
+        <result column="c_shopType" property="cShoptype"/>
+        <result column="c_frequency" property="cFrequency"/>
+        <result column="c_companyname" property="cCompanyname"/>
+        <result column="buyer_name" property="buyerName"/>
+        <result column="c_servicernum" property="cServicernum"/>
+        <result column="c_cname" property="cCname"/>
+        <result column="c_returnurl" property="cReturnurl"/>
+        <result column="c_orderorigin" property="cOrderorigin"/>
+        <result column="c_migratestate" property="cMigratestate"/>
+        <result column="c_iscomplete" property="cIscomplete"/>
+        <result column="c_taxplate_num" property="cTaxplateNum"/>
+        <result column="c_merchantname" property="cMerchantname"/>
+        <result column="c_selfsite_id" property="cSelfsiteId"/>
+        <result column="c_selfsite_name" property="cSelfsiteName"/>
+    </resultMap>
+    <resultMap id="SimpleBaseResultMap" type="hello.entity.SimpleShopOrder">
+        <id column="c_orderid" property="cOrderid"/>
+        <result column="c_buyerid" property="cBuyerid"/>
+        <result column="buyer_name" property="buyerName"/>
+        <result column="c_buyerCompanyname" property="cBuyercompanyname"/>
+        <result column="dt_adddate" property="dtAdddate"/>
+        <result column="c_companyid" property="cCompanyid"/>
+        <result column="c_companyname" property="cCompanyname"/>
+        <result column="c_orderorigin" property="cOrderorigin"/>
+    </resultMap>
+
+    <select id="selectOrders" parameterType="java.lang.String" resultMap="SimpleBaseResultMap">
+        SELECT c_orderid,c_buyerid,buyer_name,c_buyerCompanyname,dt_adddate,c_companyid,c_companyname,c_orderorigin
+        FROM shop_order WHERE c_shopType='0' AND c_platformtype='0'
+        <if test="origin!=null">
+            AND c_orderorigin=#{origin}
+        </if>
+        ORDER BY c_orderid
+    </select>
+</mapper>

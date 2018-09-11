@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.mapper.ShopOrderDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="hello.entity.ShopOrderDetail">
+        <id column="c_detailid" property="cDetailid" />
+        <result column="c_orderid" property="cOrderid" />
+        <result column="c_goodsdetailid" property="cGoodsdetailid" />
+        <result column="i_goodsnum" property="iGoodsnum" />
+        <result column="f_costprice" property="fCostprice" />
+        <result column="f_sellprice" property="fSellprice" />
+        <result column="f_marketprice" property="fMarketprice" />
+        <result column="f_totalpaymoney" property="fTotalpaymoney" />
+        <result column="f_taxRate" property="fTaxrate" />
+        <result column="c_goodsname" property="cGoodsname" />
+        <result column="f_activemoney" property="fActivemoney" />
+        <result column="c_activitytype" property="cActivitytype" />
+        <result column="c_activityid" property="cActivityid" />
+        <result column="c_activityname" property="cActivityname" />
+        <result column="c_status" property="cStatus" />
+        <result column="c_syncstate" property="cSyncstate" />
+        <result column="f_discountprice" property="fDiscountprice" />
+        <result column="f_goodsmoney" property="fGoodsmoney" />
+        <result column="c_note" property="cNote" />
+        <result column="f_needscore" property="fNeedscore" />
+        <result column="c_acitvityruleid" property="cAcitvityruleid" />
+        <result column="c_issecondskill" property="cIssecondskill" />
+        <result column="c_isgifts" property="cIsgifts" />
+        <result column="f_packageprice" property="fPackageprice" />
+        <result column="c_couponid" property="cCouponid" />
+        <result column="c_dealcode" property="cDealcode" />
+        <result column="c_image" property="cImage" />
+        <result column="c_dealno" property="cDealno" />
+        <result column="i_score" property="iScore" />
+    </resultMap>
+    <resultMap id="SimpleBaseResultMap" type="hello.entity.SimpleShopOrderDetail">
+        <id column="c_detailid" property="cDetailid" />
+        <result column="c_orderid" property="cOrderid" />
+        <result column="c_goodsdetailid" property="cGoodsdetailid" />
+        <result column="c_goodsname" property="cGoodsname" />
+        <result column="c_dealno" property="cDealno" />
+        <result column="i_goodsnum" property="iGoodsnum" />
+
+    </resultMap>
+    
+    <select id="getDetailByOrderId" parameterType="java.util.List" resultMap="SimpleBaseResultMap">
+      SELECT c_orderid,c_detailid,c_goodsdetailid,c_goodsname,c_dealno,i_goodsnum FROM shop_order_detail
+       WHERE c_orderid IN(
+        <foreach collection="list" item="item" separator=",">
+          #{item}
+        </foreach>
+       )
+      ORDER BY c_orderid
+    </select>
+</mapper>

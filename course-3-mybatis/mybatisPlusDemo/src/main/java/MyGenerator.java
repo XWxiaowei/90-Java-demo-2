@@ -22,12 +22,13 @@ public class MyGenerator {
      */
     public static void main(String[] args) {
         AutoGenerator mpg = new AutoGenerator();
-
+        String systemDir=System.getProperty("user.dir");
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
+        gc.setOutputDir(systemDir+"\\mybatisPlusDemo\\src\\main\\java");
 //        gc.setOutputDir("D:\\devData\\IdeaProjects\\skeleton\\src\\main\\java");
 //        gc.setOutputDir("H:\\opt\\eclipse\\workspace\\riskControl\\src\\main\\java");
-        gc.setOutputDir("D:\\test");
+//        gc.setOutputDir("D:\\test");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
         gc.setEnableCache(false);// XML 二级缓存
@@ -56,16 +57,19 @@ public class MyGenerator {
         });
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("admin");
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/mysql_demo?characterEncoding=utf8");
+        dsc.setPassword("1234");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/platform?characterEncoding=utf8");
         mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setTablePrefix(new String[]{"t_"});// 此处可以修改为您的表前缀
+//        strategy.setTablePrefix(new String[]{"t_"});// 此处可以修改为您的表前缀
 //        strategy.setNaming(NamingStrategy.remove_prefix_and_camel);// 表名生成策略
 //        strategy.setNaming(NamingStrategy.removePrefixAndCamel());// 表名生成策略
-        strategy.setInclude(new String[]{"student"}); // 需要生成的表
+//        strategy.setInclude(new String[]{"shop_create_order_record"}); // 需要生成的表
+        strategy.setInclude(new String[]{"shop_order"}); // 需要生成的表
+//        strategy.setInclude(new String[]{"shop_order_detail"}); // 需要生成的表
+
 //        strategy.setExclude(new String[]{"t_rong_bid"}); // 排除生成的表
         // 字段名生成策略
         strategy.setNaming(NamingStrategy.underline_to_camel);

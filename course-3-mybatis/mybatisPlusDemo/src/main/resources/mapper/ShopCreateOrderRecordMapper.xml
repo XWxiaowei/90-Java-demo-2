@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.mapper.ShopCreateOrderRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="hello.entity.ShopCreateOrderRecord">
+    <result column="id" property="id" />
+        <result column="c_detailid" property="cDetailid" />
+        <result column="c_dealno" property="cDealno" />
+        <result column="goods_id" property="goodsId" />
+        <result column="goods_name" property="goodsName" />
+        <result column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="register_type" property="registerType" />
+        <result column="origin" property="origin" />
+        <result column="order_num" property="orderNum" />
+        <result column="company_id" property="companyId" />
+        <result column="company_name" property="companyName" />
+        <result column="adddate" property="adddate" />
+        <result column="editdate" property="editdate" />
+        <result column="buyer_companyname" property="buyerCompanyname" />
+    </resultMap>
+
+
+</mapper>

@@ -44,6 +44,7 @@
                       class="com.baomidou.mybatisplus.plugins.PerformanceInterceptor"/>
             </array>
         </property>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
 
     <!-- 配置数据源 -->
