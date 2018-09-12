@@ -52,11 +52,20 @@ public class MyGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
-        dsc.setTypeConvert(new MySqlTypeConvert());
+//        dsc.setTypeConvert(new MySqlTypeConvert());
+        dsc.setTypeConvert(new MySqlTypeConvert() {
+            // 自定义数据库表字段类型转换【可选】
+            @Override
+            public DbColumnType processTypeConvert(String fieldType) {
+                System.out.println("转换类型：" + fieldType);
+                return super.processTypeConvert(fieldType);
+            }
+        });
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername(rb.getString("userName"));
         dsc.setPassword(rb.getString("passWord"));
-        dsc.setUrl(rb.getString("url"));        mpg.setDataSource(dsc);
+        dsc.setUrl(rb.getString("url"));
+        mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
