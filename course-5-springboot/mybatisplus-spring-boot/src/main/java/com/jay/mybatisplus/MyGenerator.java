@@ -104,11 +104,11 @@ public class MyGenerator {
         pc.setParent(rb.getString("parent"));
         pc.setModuleName("");
         pc.setController("controller."+rb.getString("className"));// 这里是控制器包名，默认 web
-        pc.setEntity("model."+rb.getString("className"));
-        pc.setMapper("dao."+rb.getString("className"));
-        pc.setXml("mapping."+rb.getString("className"));
-        pc.setService("service."+rb.getString("className"));
-        pc.setServiceImpl("service."+rb.getString("className")+".impl");
+        pc.setEntity("model");
+        pc.setMapper("dao");
+        pc.setXml("mapper");
+        pc.setService(rb.getString("className")+".service");
+        pc.setServiceImpl(rb.getString("className")+".service"+".impl");
         mpg.setPackageInfo(pc);
 
         // 执行生成
