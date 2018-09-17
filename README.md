@@ -21,3 +21,12 @@ mybatis缓存项目 --> mybatisCacheDemo
 拦截mapper接口方法实现多数据源 --> bounterMybatis
 
 mybatis plus项目 --> mybatisPlusDemo
+#### 课程四
+springboot的手动、自动装配 --> spring-boot-deep
+
+#### 课程五
+springboot集成mybatisplus--> mybatisplus-spring-boot-simple
+springboot集成lombok--> spring-boot-lombok
+springboot集成lombok,durid,mybatisplue--> mybatisplus-spring-boot
+**备注：mybatisplus-spring-boot 有点问题**
+
