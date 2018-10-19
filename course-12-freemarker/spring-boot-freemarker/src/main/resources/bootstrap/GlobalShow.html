@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BootStrap响应式的列重置</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.css"
+          rel="stylesheet">
+    <style type="text/css">
+        /*基本的全局显示*/
+        body {
+            /*移除body的边距*/
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42;
+            color: #333333;
+            background-color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+   <!--容器-->
+   <div class="container">
+       <!--<div class="row">-->
+           <!--<span>第一行开始</span>-->
+           <!--<div class="col-*-*" style="background-color: black">-->
+           <!--</div>-->
+           <!--<div class="col-*-*" style="color: aquamarine"></div>-->
+           <!--<div class="col-*-*" style="color: chocolate"></div>-->
+           <!--<div class="col-*-*" style="color: blue"></div>-->
+       <!--</div>-->
+       <!--<div class="row">-->
+           <!--<span>第二行开始</span>-->
+           <!--<div class="col-*-*" style="color: black">-->
+           <!--</div>-->
+           <!--<div class="col-*-*" style="color: aquamarine"></div>-->
+           <!--<div class="col-*-*" style="color: chocolate"></div>-->
+           <!--<div class="col-*-*" style="color: blue"></div>-->
+       <!--</div>-->
+       <div class="row">
+            <div class="col-xs-6 col-sm-3"
+             style="background-color: #dedef8;
+             box-shadow: inset 1px -1px 1px #444444">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+           <div class="col-xs-6 col-sm-3"
+                style="background-color: #dedef8;
+                box-shadow: inset 1px -1px 1px #444444">
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                   enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                   nisi ut aliquip ex ea commodo consequat.
+               </p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                   eiusmod tempor incididunt ut.
+               </p>
+           </div>
+           <!--我们在小设备浏览时无法确定网络显示的位置-->
+           <div class="clearfix  visible-xs"></div>
+           <div class="col-xs-6 col-sm-3"
+                style="background-color: #dedef8;
+        box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+               <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                   laboris nisi ut aliquip ex ea commodo consequat.
+               </p>
+           </div>
+           <div class="col-xs-6 col-sm-3"
+                style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                   enim ad minim
+               </p>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

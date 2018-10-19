@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public class FreemarketTest2 {
     private static final String profile_path = System.getProperty("user.dir")+"/spring-boot-freemarker";
-    private static final String TEMPLATE_PATH = profile_path+"/src/main/resources/templates";//模板路径
+    private static final String TEMPLATE_PATH = profile_path+"/src/main/resources/templates/";//模板路径
 
     //通过.ftl模板生成java类
     public static void main(String[] args) {
@@ -62,7 +62,7 @@ public class FreemarketTest2 {
         }
         dataMap.put("employees",employees);
 
-        String DEST_PATH = profile_path+"/src/main/resources/static/demo";//目标路径
+        String DEST_PATH = profile_path+"/src/main/resources/static/demo/";//目标路径
         genFileWithTemplate(TEMPLATE_PATH,DEST_PATH,"hello-html.ftl","hello.html",dataMap);
     }
 
