@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            color: #666666;
+        }
+        .title {
+            font-weight: bold;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<div style="width:50%;margin: auto">
+    <h3>FreeMarker自动生成HTML</h3>
+    <p style="color: #ffff00">名称：Template-FreeMarker</p>
+    <div style="color: #ffff00">年龄：123456789</div>
+    <br/>
+    <div>《FreeMarker语法汇总》</div>
+    <div class="title">声明变量cdate="自定义变量"</div>
+    <div class="title">条件判断</div>
+
+        <div>自定义变量</div>
+
+    <div class="title">字符串截取(原始字符串："字符串截取Demo")</div>
+    <div>截取索引为2的字符：串</div>
+    <div>截取区间2-5字符串：串截取D</div>
+    <br/>
+
+    <div class="title">算数运算（声明了两个变量a=5,b=8）</div>
+    <div>"+":13</div>
+    <div>"-":-3</div>
+    <div>"*":40</div>
+    <div>"/":0.625</div>
+    <div>"%":5</div>
+    <br/>
+
+    <div class="title">比较字符串</div>
+    <div></div>
+    <div>a小于b</div>
+
+    <div class="title">内建函数</div>
+    <div>第一个字母大写:HelloMari</div>
+    <div>所有字母小写：hellomari</div>
+    <div>所有字母大写：HELLOMARI</div>
+
+    <div>数值取整(3.1415926):3</div>
+    <div>日期格式化：2018-10-18</div>
+    <div>获取列表长度3</div>
+    <br/>
+    <div class="title">遍历列表项：</div>
+    <ul>
+            <li>人:A0</li>
+            <li>人:A1</li>
+            <li>人:A2</li>
+    </ul>
+
+    <div class="title">遍历Map项key：</div>
+    <ul>
+           <li>键:emp5---值:雇员5</li>
+           <li>键:emp4---值:雇员4</li>
+           <li>键:emp3---值:雇员3</li>
+           <li>键:emp2---值:雇员2</li>
+           <li>键:emp1---值:雇员1</li>
+           <li>键:emp0---值:雇员0</li>
+    </ul>
+
+    <div class="title">遍历Map项value：</div>
+    <ul>
+            <li>值：雇员5</li>
+            <li>值：雇员4</li>
+            <li>值：雇员3</li>
+            <li>值：雇员2</li>
+            <li>值：雇员1</li>
+            <li>值：雇员0</li>
+    </ul>
+
+    <!--声明list集合-->
+    <!--引入其他ftl模板文件-->
+    <div class="title">引入其他ftl模板文件：</div>
+<div style="color: #666666">我是被include的模板内容</div>
+
+    <!--宏命令（自定义标签）-->
+    <div class="title">宏命令(自定义不带参数的标签)</div>
+        <div>不带参数宏：FreeMarker自动生成HTML</div>
+    <!--使用自定义不带参数的宏（标签）-->
+    <div class="title">宏命令（自定义带参数的标签）</div>
+
+        <div>带参数宏：FreeMarker自动生成HTML--参数0---参数1---参数2</div>
+
+    <!--命名空间-->
+    <div style="color: peru">另一个ftl文件定义的变量</div>
+</div>
+
+</body>
+</html>
