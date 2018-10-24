@@ -82,7 +82,7 @@ public class MyGenerator {
         // 自定义实体父类
 //         strategy.setSuperEntityClass("hello.entity.BaseEntity");
         // 自定义实体，公共字段
-        strategy.setSuperEntityColumns(new String[]{"id"});
+//        strategy.setSuperEntityColumns(new String[]{"id"});
         // 自定义 mapper 父类
         // strategy.setSuperMapperClass("com.fcs.demo.TestMapper");
         // 自定义 service 父类
@@ -103,12 +103,12 @@ public class MyGenerator {
         PackageConfig pc = new PackageConfig();
         pc.setParent(rb.getString("parent"));
         pc.setModuleName("");
-        pc.setController(rb.getString("className").toLowerCase()+".controller");// 这里是控制器包名，默认 web
+        pc.setController(rb.getString("className")+".controller");// 这里是控制器包名，默认 web
         pc.setEntity("model");
         pc.setMapper("dao");
         pc.setXml("mapper");
         pc.setService(rb.getString("className")+".service");
-        pc.setServiceImpl(rb.getString("className").toLowerCase()+".service"+".impl");
+        pc.setServiceImpl(rb.getString("className")+".service"+".impl");
         mpg.setPackageInfo(pc);
 
         // 执行生成
