@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 //@EnableSayHelloWorld
-@EnableSelectorHelloWorld
+//@EnableSelectorHelloWorld
 @SpringBootApplication
 public class SpringBootDeepLearnApplication {
 
