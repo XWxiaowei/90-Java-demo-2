@@ -1,0 +1,9 @@
+server:
+  port: 9898
+spring:
+  data:
+    elasticsearch:
+      cluster-name: kobe
+      cluster-nodes: 47.98.178.11:9300
+      repositories:
+        enabled: true

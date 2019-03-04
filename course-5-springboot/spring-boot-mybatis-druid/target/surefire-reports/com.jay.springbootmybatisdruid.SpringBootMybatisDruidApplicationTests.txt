@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.jay.springbootmybatisdruid.SpringBootMybatisDruidApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.475 s <<< FAILURE! - in com.jay.springbootmybatisdruid.SpringBootMybatisDruidApplicationTests
+contextLoads(com.jay.springbootmybatisdruid.SpringBootMybatisDruidApplicationTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure] from ClassLoader [sun.misc.Launcher$AppClassLoader@75b84c92]
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/autoconfigure/jdbc/metadata/DataSourcePoolMetadataProvider
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvider
+
