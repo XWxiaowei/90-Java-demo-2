@@ -18,7 +18,7 @@ import java.io.Serializable;
  */
 @Data
 @Document(indexName = "titleindex",type = "_doc")
-public class TitleDTO implements Serializable {
+public class TitleDocument implements Serializable {
 
     /**
      *
@@ -35,10 +35,10 @@ public class TitleDTO implements Serializable {
     @Field(type = FieldType.Text, analyzer = "ik_max_word", searchAnalyzer = "ik_smart")
     private String description;
 
-    public TitleDTO() {
+    public TitleDocument() {
     }
 
-    public TitleDTO(Long id, String titlename, String description) {
+    public TitleDocument(Long id, String titlename, String description) {
         this.id = id;
         this.titlename = titlename;
         this.description = description;
