@@ -28,7 +28,7 @@
 
     <!-- 加载映射文件-->
     <mappers>
-        <mapper resource="xml/StudentMapper.xml"/>
+        <mapper resource="chapter1/xml/StudentMapper.xml"/>
     </mappers>
 
 </configuration>

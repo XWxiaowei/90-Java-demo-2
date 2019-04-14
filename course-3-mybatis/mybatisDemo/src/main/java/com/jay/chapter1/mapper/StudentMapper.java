@@ -1,4 +1,4 @@
-package com.jay.mapper;
+package com.jay.chapter1.mapper;
 
 import com.jay.entity.Student;
 import org.apache.ibatis.annotations.Param;

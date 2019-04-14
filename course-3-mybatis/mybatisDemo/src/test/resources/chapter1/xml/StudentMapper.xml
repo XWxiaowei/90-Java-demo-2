@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.jay.mapper.StudentMapper">
+<mapper namespace="com.jay.chapter1.mapper.StudentMapper">
     <resultMap id="BaseColumn" type="com.jay.entity.Student">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
