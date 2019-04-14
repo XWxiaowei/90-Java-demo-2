@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
     <!--加载配置文件->jdbc.properties 数据库文件 -->
     <properties resource="jdbc.properties"/>
 
@@ -23,19 +24,11 @@
             </dataSource>
         </environment>
 
-        <environment id="development2">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}"/>
-                <property name="url" value="${jdbc.url2}"/>
-                <property name="username" value="${jdbc.username2}"/>
-                <property name="password" value="${jdbc.password2}"/>
-            </dataSource>
-        </environment>
     </environments>
 
     <!-- 加载映射文件-->
     <mappers>
         <mapper resource="xml/StudentMapper.xml"/>
     </mappers>
+
 </configuration>

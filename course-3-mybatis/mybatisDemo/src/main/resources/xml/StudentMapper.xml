@@ -3,10 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="hello.mapper.StudentMapper">
-
-    <select id="selectOneById" resultType="hello.entity.Student">
-        select * from student where id = #{id}
+<mapper namespace="com.jay.mapper.StudentMapper">
+    <resultMap id="BaseColumn" type="com.jay.entity.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+    </resultMap>
+    <select id="selectByName" resultMap="BaseColumn">
+        select id,name,age from student where name LIKE  CONCAT('%',#{name},'%')
     </select>
 
 </mapper>

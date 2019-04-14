@@ -1,15 +1,16 @@
-package hello;
+package com.jay;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
+import com.jay.entity.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import hello.entity.Student;
-import hello.mapper.StudentMapper;
+import com.jay.mapper.StudentMapper;
 
 public class Run {
     public static void main(String[] args) {
@@ -28,27 +29,11 @@ public class Run {
                 StudentMapper mapper = session.getMapper(StudentMapper.class);
 
 
-                Student student = mapper.selectOneById(1L);
-                System.out.println(student.toString());
+                List<Student> studentList = mapper.selectByName("点点");
+                System.out.println(studentList.get(0).toString());
                 //关闭session
                 session.close();
 
-            }
-
-            {
-                //读取mybatis-config.xml文件
-                inputStream = Resources.getResourceAsStream(resource);
-                SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, "development2");
-                //创建session实例
-                SqlSession session = sqlSessionFactory.openSession();
-
-                StudentMapper mapper = session.getMapper(StudentMapper.class);
-
-                Student student2 = mapper.selectOneById(1L);
-                System.out.println(student2.toString());
-
-                //关闭session
-                session.close();
             }
 
 

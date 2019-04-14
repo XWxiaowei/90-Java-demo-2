@@ -1,4 +1,4 @@
-package hello.entity;
+package com.jay.entity;
 
 public class Student {
 
@@ -12,14 +12,15 @@ public class Student {
     private Integer age;
 
     // 班级
-    private String className;
+    private String classId;
 
-    public String getClassName() {
-        return className;
+
+    public String getClassId() {
+        return classId;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+    public void setClassId(String classId) {
+        this.classId = classId;
     }
 
     public Integer getId() {
@@ -52,7 +53,7 @@ public class Student {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", className='" + className + '\'' +
+                ", classId='" + classId + '\'' +
                 '}';
     }
 }
