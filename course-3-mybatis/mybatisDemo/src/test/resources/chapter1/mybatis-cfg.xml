@@ -7,6 +7,10 @@
     <!--加载配置文件->jdbc.properties 数据库文件 -->
     <properties resource="jdbc.properties"/>
 
+    <!--有多个日志框架时需要配置-->
+    <!--<settings>-->
+        <!--<setting name="logImpl" value="LOG4J"/>-->
+    <!--</settings>-->
     <!-- 设置一个默认的连接环境信息 -->
     <environments default="development">
 
