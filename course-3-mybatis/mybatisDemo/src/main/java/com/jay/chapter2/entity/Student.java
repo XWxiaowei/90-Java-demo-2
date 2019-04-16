@@ -1,4 +1,4 @@
-package com.jay.entity;
+package com.jay.chapter2.entity;
 
 import lombok.Data;
 
@@ -16,6 +16,9 @@ public class Student {
 
     // 班级
     private String classId;
-
+    /**
+     * 性别
+     */
+    private String sex;
 
 }

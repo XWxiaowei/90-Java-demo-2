@@ -1,5 +1,6 @@
 package com.jay.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,18 +15,27 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "student")
 public class JpaStudent {
-    // 学号
+    /**
+     *     // 学号
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    // 姓名
+    /**
+     *     // 姓名
+     */
     private String name;
 
-    // 年龄
+    /**
+     *     // 年龄
+     */
     private Integer age;
 
-    // 班级
+    /**
+     * // 班级
+     */
+    @Column(name = "class_id")
     private String classId;
 
     public JpaStudent(String name, Integer age, String classId) {
