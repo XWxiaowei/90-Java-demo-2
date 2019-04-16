@@ -21,4 +21,9 @@ public class Student {
      */
     private String sex;
 
+    /**
+     * 班级
+     */
+    private ClassRoom classRoom;
+
 }

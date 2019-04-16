@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jay.chapter1.mapper.Student2Mapper">
+    <resultMap id="studentResult" type="com.jay.chapter2.entity.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <association property="classRoom" javaType="ClassRoom"/>
+    </resultMap>
+    
+    <resultMap id="classRoomResult" type="com.jay.chapter2.entity.ClassRoom">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <select id="selectByName" resultMap="BaseColumn">
+        select id,name,age from student where name LIKE  CONCAT('%',#{name},'%')
+    </select>
+
+</mapper>
