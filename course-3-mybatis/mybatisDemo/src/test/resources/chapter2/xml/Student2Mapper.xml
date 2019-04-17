@@ -16,8 +16,9 @@
         <id property="id" column="id"/>
         <result property="name" column="name"/>
     </resultMap>
-    <select id="selectByName" resultMap="BaseColumn">
-        select id,name,age from student where name LIKE  CONCAT('%',#{name},'%')
+    <select id="selectStudentById" resultMap="studentResult">
+        SELECT s.id,s.`name`,s.age,s.sex,c.id,c.`name` FROM student s, class c
+        WHERE s.class_id=c.id AND s.id=#{id}
     </select>
 
 </mapper>

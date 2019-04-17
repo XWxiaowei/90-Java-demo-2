@@ -33,7 +33,7 @@
 
     <!-- 加载映射文件-->
     <mappers>
-        <mapper resource="chapter1/xml/StudentMapper.xml"/>
+        <mapper resource="chapter2/xml/Student2Mapper.xml"/>
     </mappers>
 
 
