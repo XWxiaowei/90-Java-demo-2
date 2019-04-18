@@ -1,5 +1,6 @@
 package com.jay.chapter2.entity;
 
+import com.jay.chapter2.enums.SexEnum;
 import lombok.Data;
 
 @Data
@@ -19,7 +20,7 @@ public class Student {
     /**
      * 性别
      */
-    private String sex;
+    private SexEnum sexEnum;
 
     /**
      * 班级

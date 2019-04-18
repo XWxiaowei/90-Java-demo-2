@@ -30,6 +30,7 @@ public class SimpleMyBatis3Test {
         try {
             InputStream inputStream = Resources.getResourceAsStream(config);
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

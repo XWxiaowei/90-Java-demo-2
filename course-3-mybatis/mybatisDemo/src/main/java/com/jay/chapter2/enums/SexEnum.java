@@ -8,9 +8,9 @@ import java.util.Map;
  *
  * @author xiang.wei
  */
-public enum SexEnum {
+public enum SexEnum implements BaseEnum<SexEnum, String> {
     MAN("0", "男"),
-    WEMAN("1", "女");
+    WEMAN("1", "女"),;
     private String key;
     private String value;
 
@@ -26,11 +26,12 @@ public enum SexEnum {
         this.key = key;
         this.value = value;
     }
-
+    @Override
     public String getKey() {
         return key;
     }
 
+    @Override
     public String getValue() {
         return value;
     }
