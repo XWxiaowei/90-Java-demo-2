@@ -39,4 +39,12 @@ public enum SexEnum implements BaseEnum<SexEnum, String> {
     public static SexEnum getEnums(String key) {
         return SEX_MAP.get(key);
     }
+
+    @Override
+    public String toString() {
+        return "SexEnum{" +
+                "key='" + key + '\'' +
+                ", value='" + value + '\'' +
+                '}';
+    }
 }

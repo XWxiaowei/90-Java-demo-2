@@ -10,6 +10,7 @@
     <!--别名处理-->
     <typeAliases>
         <typeAlias type="com.jay.chapter2.entity.ClassRoom" alias="ClassRoom"/>
+        <typeAlias type="com.jay.chapter2.entity.Student" alias="Student"/>
     </typeAliases>
 
     <!-- 设置一个默认的连接环境信息 -->
@@ -34,6 +35,7 @@
     <!-- 加载映射文件-->
     <mappers>
         <mapper resource="chapter2/xml/Student2Mapper.xml"/>
+        <mapper resource="chapter2/xml/Student3Mapper.xml"/>
     </mappers>
 
 

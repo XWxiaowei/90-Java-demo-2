@@ -27,4 +27,15 @@ public class Student {
      */
     private ClassRoom classRoom;
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", classId='" + classId + '\'' +
+                ", sexEnum=" + sexEnum.toString() +
+                ", classRoom=" + classRoom +
+                '}';
+    }
 }
