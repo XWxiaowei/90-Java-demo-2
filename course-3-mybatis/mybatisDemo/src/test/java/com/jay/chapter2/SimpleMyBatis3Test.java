@@ -19,9 +19,9 @@ public class SimpleMyBatis3Test extends BaseMyBatisTest {
         SqlSession session = sqlSessionFactory.openSession();
         Student3Mapper mapper = session.getMapper(Student3Mapper.class);
         List<Student> students = mapper.selectStudent(1, null);
-        System.out.println("----》只传id返回结果"+students.toString());
+        System.out.println("----》SelectStudent只传id返回结果"+students.toString());
         List<Student> students1 = mapper.selectStudent(null, "平平");
-        System.out.println("----》只传name返回结果"+students1.toString());
+        System.out.println("----》SelectStudent只传name返回结果"+students1.toString());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class SimpleMyBatis3Test extends BaseMyBatisTest {
         ids.add(1);
         ids.add(2);
         List<Student> students = mapper.selectByIds(ids);
-        System.out.println("---->通过ids查询返回结果" + students.toString());
+        System.out.println("---->SelectByIds通过ids查询返回结果" + students.toString());
     }
     @Test
     public void  selectByNameOrAge() {
@@ -40,7 +40,7 @@ public class SimpleMyBatis3Test extends BaseMyBatisTest {
         Student3Mapper mapper = session.getMapper(Student3Mapper.class);
         List<Student> students = mapper.selectByNameOrAge("美美", null);
         System.out.println("---->selectByNameOrAge通过name查询返回结果" + students.toString());
-        List<Student> students1 = mapper.selectByNameOrAge(null, 1);
+        List<Student> students1 = mapper.selectByNameOrAge(null, 16);
         System.out.println("----->selectByNameOrAge通过age查询返回的结果" + students1.toString());
 
     }

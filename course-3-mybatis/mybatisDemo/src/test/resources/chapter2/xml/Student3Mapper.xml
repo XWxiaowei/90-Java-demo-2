@@ -12,6 +12,7 @@
                 typeHandler="com.jay.chapter2.Handler.GeneralEnumHandler"/>
     </resultMap>
 
+    <!--运用where，if元素进行条件拼接-->
     <select id="selectStudent" resultMap="studentResult">
         SELECT * FROM student
         <where>
@@ -24,17 +25,20 @@
         </where>
     </select>
 
+    <!--运用foreach元素进行实现in查询-->
     <select id="selectByIds" resultMap="studentResult">
         SELECT * FROM student
         <where>
             <if test="ids!=null">
                 id IN
-                <foreach collection="list" open="(" close=")" separator="," item="id">
+                <foreach collection="ids" open="(" close=")" separator="," item="id">
                     #{id}
                 </foreach>
             </if>
         </where>
     </select>
+
+    <!--运用choose,when,otherwise元素实现多条件分支-->
     <select id="selectByNameOrAge" resultMap="studentResult">
         SELECT * FROM student
         <where>
@@ -52,6 +56,7 @@
         </where>
     </select>
 
+    <!--运用set元素sql拼接问题-->
     <update id="updateStudent" parameterType="Student">
         UPDATE student
         <set>
