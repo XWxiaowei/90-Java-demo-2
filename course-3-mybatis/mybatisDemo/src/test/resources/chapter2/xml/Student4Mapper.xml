@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jay.chapter2.mapper.Student2Mapper">
+    <resultMap id="studentResult" type="com.jay.chapter2.entity.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="sexEnum" column="sex"
+                typeHandler="com.jay.chapter2.Handler.GeneralEnumHandler"/>
+        <association property="classRoom" javaType="ClassRoom">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+
+        </association>
+    </resultMap>
+
+    <resultMap id="classRoomResult" type="com.jay.chapter2.entity.ClassRoom">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <select id="selectStudentById" resultMap="studentResult">
+        SELECT s.id,s.`name`,s.age,s.sex,c.id,c.`name` FROM student s, class c
+        WHERE s.class_id=c.id AND s.id=#{id}
+    </select>
+
+</mapper>

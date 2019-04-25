@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--加载配置文件->jdbc.properties 数据库文件 -->
+    <properties resource="jdbc.properties"/>
+
+    <!--别名处理-->
+    <typeAliases>
+        <typeAlias type="com.jay.chapter3.entity.ClassRoom" alias="ClassRoom"/>
+        <typeAlias type="com.jay.chapter3.entity.Student" alias="Student"/>
+    </typeAliases>
+
+    <typeHandlers>
+        <package name="com.jay.chapter3.enums"/>
+    </typeHandlers>
+
+    <!-- 设置一个默认的连接环境信息 -->
+    <environments default="development">
+
+        <!--连接环境信息，取一个任意唯一的名字 -->
+        <environment id="development">
+            <!-- mybatis使用jdbc事务管理方式 -->
+            <transactionManager type="JDBC"/>
+            <!-- mybatis使用连接池方式来获取连接 -->
+            <dataSource type="POOLED">
+                <!-- 配置与数据库交互的4个必要属性 -->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <!-- 加载映射文件-->
+    <mappers>
+        <mapper resource="chapter3/xml/Student4Mapper.xml"/>
+    </mappers>
+
+
+</configuration>

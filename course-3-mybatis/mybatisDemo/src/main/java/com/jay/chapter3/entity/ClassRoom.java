@@ -1,5 +1,6 @@
-package com.jay.chapter2.entity;
+package com.jay.chapter3.entity;
 
+import com.jay.chapter3.enums.ClassTypeEnum;
 import lombok.Data;
 
 import java.util.List;
@@ -30,13 +31,5 @@ public class ClassRoom {
      */
     private String classType;
 
-    @Override
-    public String toString() {
-        return "ClassRoom{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", studentList=" + studentList +
-                ", classType='" + classType + '\'' +
-                '}';
-    }
+    private ClassTypeEnum classTypeEnum;
 }
