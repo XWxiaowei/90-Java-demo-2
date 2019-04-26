@@ -23,13 +23,12 @@ public class ClassRoom {
     private String name;
 
     /**
-     *
-     */
-    private List<Student> studentList;
-    /**
      * 班级类型
      */
     private String classType;
 
+    /**
+     *
+     */
     private ClassTypeEnum classTypeEnum;
 }

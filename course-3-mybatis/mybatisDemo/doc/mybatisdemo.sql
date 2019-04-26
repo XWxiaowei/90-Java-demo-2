@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-04-25 21:51:53
+Date: 2019-04-26 10:17:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,18 +55,16 @@ DROP TABLE IF EXISTS `classroom`;
 CREATE TABLE `classroom` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `class_id` int(11) DEFAULT NULL,
-  `student_id` int(11) DEFAULT NULL,
   `class_type` varchar(2) COLLATE utf8_bin DEFAULT NULL COMMENT '班级类型;0,差班；1,好班',
+  `name` varchar(20) COLLATE utf8_bin DEFAULT NULL COMMENT '班级名称',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Records of classroom
 -- ----------------------------
-INSERT INTO `classroom` VALUES ('1', '1', '1', null);
-INSERT INTO `classroom` VALUES ('2', '1', '2', null);
-INSERT INTO `classroom` VALUES ('3', '2', '3', null);
-INSERT INTO `classroom` VALUES ('4', '2', '4', null);
+INSERT INTO `classroom` VALUES ('1', '1', '0', '一班');
+INSERT INTO `classroom` VALUES ('2', '1', '1', '二班');
 
 -- ----------------------------
 -- Table structure for `student`

@@ -11,6 +11,7 @@
     <typeAliases>
         <typeAlias type="com.jay.chapter3.entity.ClassRoom" alias="ClassRoom"/>
         <typeAlias type="com.jay.chapter3.entity.Student" alias="Student"/>
+        <typeAlias type="com.jay.chapter3.Handler.GeneralEnumHandler" alias="GeneralEnumHandler"/>
     </typeAliases>
 
     <typeHandlers>
